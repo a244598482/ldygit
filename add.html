@@ -4,27 +4,31 @@
 <title>添加新书</title>
 
 </head>
-
+cccccccccccc
 
 <body>
 <div id="a">
 <form method="post">
 <table>
 {% if havenoword %}
+<<<<<<< HEAD
     <font color="red">书号/书名/作者不能为空bbbbbbbbbb</font>
+=======
+    <font color="red">aaaaaa书号/书名/作者不能为空</font>
+>>>>>>> C4
 {% endif %}
  <tr> 
-  <td>书号</td>
+  <td>书号aaaa</td>
   <td><input name="ISBN" type="text"></td>
  </tr>
  <tr>
-  <td>书名</td>
+  <td>书名aaaa</td>
   <td><input name="Title" type="text"></td>
  </tr>
 <tr> 
-  <td>作者</td>
+  <td>作者aaa</td>
   <td>
-  <a href="/add2">添加作者</a>
+  <a href="/add2">添加作者aaaa</a>
   <select name="AuthorID" style="width:91px">
   {% for author in author_list %}
   <option value="{{author.AuthorID}}">{{author.Name}}</option>
