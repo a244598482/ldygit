@@ -1,0 +1,43 @@
+﻿{% load staticfiles %}
+
+<head>
+<title>添加新货</title>
+</head>
+
+
+
+<body>
+<div id="a">
+<form method="post">
+<table>
+ <tr> 
+  <td>书号</td>
+  <td>{{new_book.ISBN}}</td> 
+ </tr>
+ <tr>
+  <td>书名</td>
+  <td><input name="Title" type="text" value="{{new_book.Title}}" onfocus="if(value=='{{new_book.Title}}'){this.style.color='#ff00ff';value=''}" onblur="if(value==''){this.style.color='';value='{{new_book.Title}}'}"/></td> 
+ </tr>
+ <tr>
+  <td>作者</td>
+  <td>{{new_book.AuthorID.Name}}</td>
+ </tr>
+ <tr>
+  <td>出版社</td>
+  <td><input name="Publisher" type="text" value="{{new_book.Publisher}}" onfocus="if(value=='{{new_book.Publisher}}'){this.style.color='#ff00ff';value=''}" onblur="if(value==''){this.style.color='';value='{{new_book.Publisher}}'}"/></td> 
+ </tr>
+ <tr>
+  <td>出版日期</td>
+  <td><input name="PublishDate" type="text" value="{{new_book.PublishDate}}" onfocus="if(value=='{{new_book.PublishDate}}'){this.style.color='#ff00ff';value=''}" onblur="if(value==''){this.style.color='';value='{{new_book.PublishDate}}'}"/></td> 
+ </tr>
+ <tr>
+  <td>价格</td>
+  <td><input name="Price" type="text" value="{{new_book.Price}}" onfocus="if(value=='{{new_book.Price}}'){this.style.color='#ff00ff';value=''}" onblur="if(value==''){this.style.color='';value='{{new_book.Price}}'}"/></td> 
+ </tr>
+ <tr>
+  <td colspan=2 align="center"><input type="submit" value="更新"> </td>
+ </tr>
+</table>
+</form>
+</div>
+</body>

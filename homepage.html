@@ -1,0 +1,46 @@
+﻿{% load staticfiles %}
+
+<head>
+<title>LDY图书管理系统</title>
+</head>
+<body>
+
+<div id="a">
+<form method="POST" action="/search1/">
+<input type="text" name="search1" value="请输入书名" style="color:#BDBDBD;" onfocus="if(value=='请输入书名'){this.style.color='';value=''}" onblur="if(value==''){this.style.color='#BDBDBD';value='请输入书名'}"/>
+<input type="submit" value="搜索">
+</form>
+</div>
+<div id="b">
+<form method="POST" action="/search2/">
+<input type="text" name="search2" value="请输入作者名" style="color:#BDBDBD;" onfocus="if(value=='请输入作者名'){this.style.color='';value=''}" onblur="if(value==''){this.style.color='#BDBDBD';value='请输入作者名'}"/>
+<input type="submit" value="搜索">
+</form>
+</div>
+
+
+<div id="c">
+<table style="width:240px;height:50px">
+ <tr>
+  <th>书号</th><th>书名</th>
+ </tr>
+{% if Book_list %}
+{% for book in Book_list %}
+ <tr>
+  <td>{{ book.ISBN }}</td>
+  <td><a href="/show/?id={{book.id}}">{{ book.Title }}</td>
+ </tr>
+{% endfor %}
+{% endif %}
+</table>  
+</div>
+
+
+<div id="d">
+<a href="/add">添加新书</a>
+</div>
+
+<div id="footer">
+  <p align="center">Copyright 2015 刘丁一</p><p align="center">Powered by <a href="http://www.djangoproject.com" target="_blank"><img src="/static/django.jpg" alt="Django Project" width=40 height=15 /></a></p>
+</div>
+</body>

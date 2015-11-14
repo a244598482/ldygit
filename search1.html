@@ -1,0 +1,39 @@
+﻿{% load staticfiles %}
+
+<head>
+<title>LDY图书管理系统</title>
+</head>
+<body>
+
+<div id="a">
+<table style="width:900px;height:50px">
+ <tr>
+  <th>书号</th><th>书名</th><th>作者</th><th>出版社</th><th>出版日期</th><th>价格</th>
+ </tr>
+ {% if Book_list %}
+ {% for thebook in Book_list %}
+ <tr>
+  <td>{{ thebook.ISBN }}</td>
+  <td>{{ thebook.Title }}</td>
+  <td><a href="/show2/?id={{thebook.AuthorID.id}}">{{thebook.AuthorID.Name }}</td>
+  <td>{{ thebook.Publisher }}</td>
+  <td>{{ thebook.PublishDate }}</td>
+  <td>{{ thebook.Price }}</td>
+ 
+ </tr>
+ {% endfor %}
+ {% endif %}
+</table>  
+
+</div>
+
+
+<div id="d">
+
+<a href="/">返回主页</a>
+</div>
+
+<div id="footer">
+  <p align="center">Copyright 2015 刘丁一</p><p align="center">Powered by <a href="http://www.djangoproject.com" target="_blank"><img src="/static/django.jpg" alt="Django Project" width=40 height=15 /></a></p>
+</div>
+</body>

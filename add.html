@@ -1,0 +1,55 @@
+﻿{% load staticfiles %}
+
+<head>
+<title>添加新书</title>
+
+</head>
+
+
+<body>
+<div id="a">
+<form method="post">
+<table>
+{% if havenoword %}
+    <font color="red">书号/书名/作者不能为空</font>
+{% endif %}
+ <tr> 
+  <td>书号</td>
+  <td><input name="ISBN" type="text"></td>
+ </tr>
+ <tr>
+  <td>书名</td>
+  <td><input name="Title" type="text"></td>
+ </tr>
+<tr> 
+  <td>作者</td>
+  <td>
+  <a href="/add2">添加作者</a>
+  <select name="AuthorID" style="width:91px">
+  {% for author in author_list %}
+  <option value="{{author.AuthorID}}">{{author.Name}}</option>
+  {% endfor %}
+  </td>
+ </tr>
+ <tr>
+  <td>出版社</td>
+  <td><input name="Publisher" type="text"></td>
+ </tr>
+ <tr>
+  <td>出版日期</td>
+  <td><input name="PublishDate" type="text"></td>
+ </tr>
+ <tr>
+  <td>价格</td>
+  <td><input name="Price" type="text"></td>
+ </tr>
+ <tr>
+  <td colspan=2 align="center"><input type="submit" value="确认"> <input type="reset" value="重置"></td>
+ </tr>
+</table>
+</form>
+</div>
+<div id="b">
+<a href="/">返回到主页</a>
+</div>
+</body>

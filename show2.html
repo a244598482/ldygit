@@ -1,0 +1,32 @@
+﻿{% load staticfiles %}
+
+<head>
+<title>LDY图书管理系统</title>
+</head>
+<body>
+
+<div id="a">
+<table style="width:900px;height:50px">
+ <tr>
+  <th>作者编号</th><th>作者姓名</th><th>年龄</th><th>国籍</th>
+ </tr>
+ <tr>
+  <td>{{ theauthor.AuthorID }}</td>
+  <td>{{ theauthor.Name }}</td>
+  <td>{{ theauthor.Age }}</td>
+  <td>{{ theauthor.Countury }}</td>
+ </tr>
+</table>  
+
+</div>
+
+
+<div id="d">
+<a href="/add2">添加作者</a>
+<a href="/">返回主页</a>
+</div>
+
+<div id="footer">
+  <p align="center">Copyright 2015 刘丁一</p><p align="center">Powered by <a href="http://www.djangoproject.com" target="_blank"><img src="/static/django.jpg" alt="Django Project" width=40 height=15 /></a></p>
+</div>
+</body>
